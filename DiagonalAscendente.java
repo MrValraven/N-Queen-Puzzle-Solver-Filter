@@ -1,10 +1,19 @@
 import java.util.ArrayList;
 
+/**
+ * Class DiagonalAscendente que implementa a interface Fila
+ * Representa uma diagonal ascendente do tabuleiro
+ */
 public class DiagonalAscendente implements Fila {
     private ArrayList<String> diagonalAscendente = new ArrayList<String>();
     private Tabuleiro tabuleiro;
     private int diagonalAscendenteNumber;
 
+    /**
+     * Construtor que obtem todas as colunas do tabuleiro
+     * @param tabuleiro - Representa um tabuleiro criado apartir de um configuração
+     * @param diagonalAscendenteNumber - inteiro que representa a coordenada da diagonal ascendente que pretendemos obter
+     */
     public DiagonalAscendente(Tabuleiro tabuleiro, int diagonalAscendenteNumber){
         this.tabuleiro = tabuleiro;
         this.diagonalAscendenteNumber = diagonalAscendenteNumber;

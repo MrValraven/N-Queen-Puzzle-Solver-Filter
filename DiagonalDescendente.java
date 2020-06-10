@@ -1,10 +1,19 @@
 import java.util.ArrayList;
 
+/**
+ * Class DiagonalDescendente que implementa a interface Fila
+ * Representa uma diagonal descendente do tabuleiro
+ */
 public class DiagonalDescendente implements Fila {
     private ArrayList<String> diagonalDescendente = new ArrayList<String>();
     private Tabuleiro tabuleiro;
     private int diagonalDescendenteNumber;
 
+    /**
+     * Construtor que obtem todas as diagonais descendentes do tabuleiro
+     * @param tabuleiro - Representa um tabuleiro criado apartir de um configuração
+     * @param diagonalDescendenteNumber - inteiro que representa a coordenada da diagonal descendente que pretendemos obter
+     */
     public DiagonalDescendente(Tabuleiro tabuleiro, int diagonalDescendenteNumber){
         this.tabuleiro = tabuleiro;
         this.diagonalDescendenteNumber = diagonalDescendenteNumber;

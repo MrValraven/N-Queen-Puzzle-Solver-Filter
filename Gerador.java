@@ -2,6 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/** 
+ * Class Gerador
+ * Representa um Gerador de configurações com diversos argumentos
+ */ 
 public class Gerador {
     
     private static Scanner scanner = new Scanner(System.in);
@@ -65,19 +69,39 @@ public class Gerador {
             numberOfQueens = Integer.parseInt(args[1]);
             all(numberOfQueens); 
         }
+        else if(args[0].equals("allValid")){
+            numberOfQueens = Integer.parseInt(args[1]);
+            allValid(numberOfQueens); 
+        }
         scanner.close();
     }
 
+    /**
+     * Gera um inteiro que representa o número entre 0 e range
+     * @param range - um inteiro que representa o alcance máximo
+     * @return um inteiro entre 0 e o valor de range
+     */
     private static int randomIndex(int range){
         int randomNumber =  (int) Math.floor(Math.random() * range);
         return randomNumber;
     }
 
+    /**
+     * Cria uma string composta apenas por '-';
+     * @param length - inteiro que representa o tamanho da string
+     * @return uma string de '-' de tamanho 'length' 
+     */
     private static String dashLine(int length){
          String dash = "-".repeat(length);
          return dash;
     }
-    
+
+    /**
+     * Adiciona 'D' a um index aleatório da string até a quantidade igualar o valor de numberOfQueens
+     * @param size - inteiro que representa tamanho da string
+     * @param numberOfQueens - inteiro que representa a quantidade de 'D' a adicionar à string
+     * @return uma string de tamanho 'size' composta por 'D' e '-'
+     */
     private static String addQueensToString(int size, int numberOfQueens) {
         StringBuilder string = new StringBuilder(dashLine(size));
         int queenCounter = 0;
@@ -97,7 +121,13 @@ public class Gerador {
             }
             return string.toString();
     }
-
+    /**
+     * Gerador de N strings de tamanho M * M , com Q rainhas
+     * @param m - inteiro que representa o número de casas de cada lado da matriz
+     * @param q - inteiro que representa o número de rainhas 
+     * @param n - inteiro que representa o número de configurações
+     * @return uma ArrayList que contem N strings com os parametros indicados
+     */
     public static List<String> random(int m, int q, int n){ 
         List<String> randomList = new ArrayList<String>();
         String randomString;
@@ -116,6 +146,11 @@ public class Gerador {
         return randomList;
     }
 
+    /**
+     * Gerador de todas as combinações de strings M * M , com M rainhas
+     * @param m - inteiro que representa o número de rainhas e de casas de cada lado da matriz
+     * @return uma ArrayList que contem todas as strings com os parametros indicados
+     */
     public static List<String> all(int m){
         List<String> allStrings = new ArrayList<String>();
         String binary;
@@ -160,6 +195,11 @@ public class Gerador {
         return allStrings;
     }
 
+    /**
+     * Gerador de todas as strings válidas de tamanho M * M com M rainhas
+     * @param m - inteiro que representa o número de rainhas e de casas de cada lado da matriz
+     * @return uma ArrayList com todas as strings válidas com os parametros indicados
+     */
     public static List<String> allValid(int m){
         List<String> allValid = new ArrayList<String>();
         String newConfig;

@@ -1,10 +1,19 @@
 import java.util.ArrayList;
 
+/**
+ * Class Coluna que implementa a interface Fila 
+ * Representa uma coluna do tabuleiro
+ */
 public class Coluna implements Fila {
     private ArrayList<String> coluna = new ArrayList<String>();
     private Tabuleiro tabuleiro;
     private int colunaNumber;
     
+    /**
+     * Construtor que obtem todas as colunas do tabuleiro
+     * @param tabuleiro - Representa um tabuleiro criado apartir de um configuração
+     * @param colunaNumber - inteiro que representa a coordenada da coluna que pretendemos obter
+     */
     public Coluna(Tabuleiro tabuleiro, int colunaNumber){
         this.tabuleiro = tabuleiro;
         this.colunaNumber = colunaNumber;
@@ -32,7 +41,6 @@ public class Coluna implements Fila {
 
     @Override
     public int pecas() {
-
         int count = 0;
         String currentColuna = coluna.get(colunaNumber);
         

@@ -1,3 +1,7 @@
+/**
+ * Class Rainha que herda a Class Peca
+ * Representa que tipo de peça é uma Rainha
+ */
 public class Rainha extends Peca {
     private Tabuleiro tabuleiro;
 

@@ -1,10 +1,19 @@
 import java.util.ArrayList;
 
+/**
+ * Class Linha que implementa a interface Fila
+ * Representa uma linha do tabuleiro
+ */
 public class Linha implements Fila {
     private ArrayList<String> linha = new ArrayList<String>();
     private Tabuleiro tabuleiro;
     private int linhaNumber;
 
+    /**
+     * Construtor que obtem todas as linhas do tabuleiro
+     * @param tabuleiro - Representa um tabuleiro criado apartir de um configuração
+     * @param linhaNumber - inteiro que representa a coordenada da linha que pretendemos obter
+     */
     public Linha(Tabuleiro tabuleiro, int linhaNumber){
         this.tabuleiro = tabuleiro;
         this.linhaNumber = linhaNumber;
@@ -24,6 +33,7 @@ public class Linha implements Fila {
             }
         }
     }
+
 
     @Override
     public int comprimento() {
