@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * Class Linha que implementa a interface Fila
+ * Class Linha que implementa a interface Fila.
  * Representa uma linha do tabuleiro
  */
 public class Linha implements Fila {
@@ -11,7 +11,7 @@ public class Linha implements Fila {
 
     /**
      * Construtor que obtem todas as linhas do tabuleiro
-     * @param tabuleiro - Representa um tabuleiro criado apartir de um configuração
+     * @param tabuleiro - Representa um tabuleiro criado apartir de um configuracao
      * @param linhaNumber - inteiro que representa a coordenada da linha que pretendemos obter
      */
     public Linha(Tabuleiro tabuleiro, int linhaNumber){
@@ -63,11 +63,11 @@ public class Linha implements Fila {
             }
             else{
                 if(linhaPos.charAt(pos) == 'D'){
-                    linhaPeca = new Rainha(tabuleiro, pos, pos,'D',"Rainha");
+                    linhaPeca = new Rainha(tabuleiro, pos, pos);
                     return linhaPeca;
                 }
                 else if(linhaPos.charAt(pos) == '-'){
-                    linhaPeca = new Nada(tabuleiro, pos, pos, '-', "Nada");
+                    linhaPeca = new Nada(tabuleiro, pos, pos);
                     return linhaPeca;
                 }
             }

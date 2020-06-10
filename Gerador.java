@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /** 
  * Class Gerador
- * Representa um Gerador de configurações com diversos argumentos
+ * <br> Representa um Gerador de configuracoes com diversos argumentos <br>
  */ 
 public class Gerador {
     
@@ -77,8 +77,8 @@ public class Gerador {
     }
 
     /**
-     * Gera um inteiro que representa o número entre 0 e range
-     * @param range - um inteiro que representa o alcance máximo
+     * Gera um inteiro que representa o numero entre 0 e range
+     * @param range - um inteiro que representa o alcance maximo
      * @return um inteiro entre 0 e o valor de range
      */
     private static int randomIndex(int range){
@@ -97,9 +97,9 @@ public class Gerador {
     }
 
     /**
-     * Adiciona 'D' a um index aleatório da string até a quantidade igualar o valor de numberOfQueens
+     * Adiciona 'D' a um index aleatorio da string até a quantidade igualar o valor de numberOfQueens
      * @param size - inteiro que representa tamanho da string
-     * @param numberOfQueens - inteiro que representa a quantidade de 'D' a adicionar à string
+     * @param numberOfQueens - inteiro que representa a quantidade de 'D' a adicionar a string
      * @return uma string de tamanho 'size' composta por 'D' e '-'
      */
     private static String addQueensToString(int size, int numberOfQueens) {
@@ -121,12 +121,13 @@ public class Gerador {
             }
             return string.toString();
     }
+
     /**
-     * Gerador de N strings de tamanho M * M , com Q rainhas
-     * @param m - inteiro que representa o número de casas de cada lado da matriz
-     * @param q - inteiro que representa o número de rainhas 
-     * @param n - inteiro que representa o número de configurações
-     * @return uma ArrayList que contem N strings com os parametros indicados
+     * Gerador de N strings de tamanho M * M, com Q rainhas
+     * @param m - inteiro que representa o numero de casas de cada lado da matriz
+     * @param q - inteiro que representa o numero de rainhas 
+     * @param n - inteiro que representa o numero de configurações
+     * @return um ArrayList que contem N strings com os parametros indicados
      */
     public static List<String> random(int m, int q, int n){ 
         List<String> randomList = new ArrayList<String>();
@@ -137,7 +138,7 @@ public class Gerador {
             for(int i = 0; i < n; i++){
                 randomString = addQueensToString(dimensions, q);
                 randomList.add(randomString);
-                System.out.println(randomString);
+                //System.out.println(randomString);
             }
         }
         else{
@@ -147,9 +148,9 @@ public class Gerador {
     }
 
     /**
-     * Gerador de todas as combinações de strings M * M , com M rainhas
-     * @param m - inteiro que representa o número de rainhas e de casas de cada lado da matriz
-     * @return uma ArrayList que contem todas as strings com os parametros indicados
+     * Gerador de todas as combinacoes de strings M * M com M rainhas
+     * @param m - inteiro que representa o numero de rainhas e de casas de cada lado da matriz
+     * @return um ArrayList que contem todas as strings com os parametros indicados
      */
     public static List<String> all(int m){
         List<String> allStrings = new ArrayList<String>();
@@ -187,7 +188,7 @@ public class Gerador {
                 finalString = binary.replace('1', 'D');
                 finalString = finalString.replace('0', '-');
                 if(modeValue == 1){
-                    System.out.println(finalString);
+                    //System.out.println(finalString);
                 }
                 allStrings.add(finalString);
             }
@@ -196,9 +197,9 @@ public class Gerador {
     }
 
     /**
-     * Gerador de todas as strings válidas de tamanho M * M com M rainhas
-     * @param m - inteiro que representa o número de rainhas e de casas de cada lado da matriz
-     * @return uma ArrayList com todas as strings válidas com os parametros indicados
+     * Gerador de todas as strings validas de tamanho M * M com M rainhas
+     * @param m - inteiro que representa o numero de rainhas e de casas de cada lado da matriz
+     * @return um ArrayList com todas as strings válidas com os parametros indicados
      */
     public static List<String> allValid(int m){
         List<String> allValid = new ArrayList<String>();
@@ -208,7 +209,7 @@ public class Gerador {
         for(int i = 0; i < allConfigs.size(); i++){
             newConfig = allConfigs.get(i);
             if(Validador.filtro(newConfig) == "VALIDA"){
-                System.out.println(newConfig);
+                //System.out.println(newConfig);
                 allValid.add(newConfig);
             }
         }

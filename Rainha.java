@@ -1,15 +1,18 @@
 /**
  * Class Rainha que herda a Class Peca
- * Representa que tipo de peça é uma Rainha
+ * Representa que tipo de peça e uma Rainha
  */
 public class Rainha extends Peca {
     private Tabuleiro tabuleiro;
+    private String name = "Rainha";
 
-    public Rainha(final Tabuleiro tab, final int linha, final int coluna, char id, String name) {
-        super(tab, linha, coluna, id, name);
-        id = 'D';
-        name = "Rainha";
+    public Rainha(final Tabuleiro tab, final int linha, final int coluna) {
+        super(tab, linha, coluna);
+    }
 
+    @Override
+    public String toString(){
+        return name;
     }
 
     @Override
@@ -18,14 +21,16 @@ public class Rainha extends Peca {
     }
 
     @Override
-    public boolean podeIrPara(final int linha, final int coluna){
-        if(tabuleiro.ameacada(linha, coluna) == true){
-            return false;
-        }
-        else{
+    public boolean podeIrPara(int linha, int coluna){
+        //Erro
+        char[][] board = tabuleiro.getBoard();
+        board[linha][coluna] = 'D';
+        if(board[linha][coluna] == 'D'){
             return true;
         }
-        
+        else{
+            return false;
+        } 
     }
     
 }

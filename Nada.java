@@ -1,13 +1,11 @@
 /**
- * Class nada que herda a Class Peca
- * Representa que tipo de peça é o vazio
+ * Class Nada que herda a Class Peca
+ * Representa que tipo de peça e o vazio
  */
 public class Nada extends Peca{
 
-    public Nada(final Tabuleiro tab, final int linha, final int coluna, char id, String name) {
-        super(tab, linha, coluna, id, name);
-        id = '-';
-        name = "Nada";
+    public Nada(final Tabuleiro tab, final int linha, final int coluna) {
+        super(tab, linha, coluna);
     }
     
     @Override

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * Class DiagonalAscendente que implementa a interface Fila
+ * Class DiagonalAscendente que implementa a interface Fila.
  * Representa uma diagonal ascendente do tabuleiro
  */
 public class DiagonalAscendente implements Fila {
@@ -10,8 +10,8 @@ public class DiagonalAscendente implements Fila {
     private int diagonalAscendenteNumber;
 
     /**
-     * Construtor que obtem todas as colunas do tabuleiro
-     * @param tabuleiro - Representa um tabuleiro criado apartir de um configuração
+     * Construtor que obtem todas as diagonais ascendentes do tabuleiro
+     * @param tabuleiro - Representa um tabuleiro criado apartir de um configuracao
      * @param diagonalAscendenteNumber - inteiro que representa a coordenada da diagonal ascendente que pretendemos obter
      */
     public DiagonalAscendente(Tabuleiro tabuleiro, int diagonalAscendenteNumber){
@@ -87,11 +87,11 @@ public class DiagonalAscendente implements Fila {
             }
             else{
                 if(diagonalAscendentePos.charAt(pos) == 'D'){
-                    diagonalAscendentePeca = new Rainha(tabuleiro, pos, pos,'D',"Rainha");
+                    diagonalAscendentePeca = new Rainha(tabuleiro, pos, pos);
                     return diagonalAscendentePeca;
                 }
                 else if(diagonalAscendentePos.charAt(pos) == '-'){
-                    diagonalAscendentePeca = new Nada(tabuleiro, pos, pos, '-', "Nada");
+                    diagonalAscendentePeca = new Nada(tabuleiro, pos, pos);
                     return diagonalAscendentePeca;
                 }
             }

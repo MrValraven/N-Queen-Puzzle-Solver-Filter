@@ -11,7 +11,7 @@ public class DiagonalDescendente implements Fila {
 
     /**
      * Construtor que obtem todas as diagonais descendentes do tabuleiro
-     * @param tabuleiro - Representa um tabuleiro criado apartir de um configuração
+     * @param tabuleiro - Representa um tabuleiro criado apartir de um configuracao
      * @param diagonalDescendenteNumber - inteiro que representa a coordenada da diagonal descendente que pretendemos obter
      */
     public DiagonalDescendente(Tabuleiro tabuleiro, int diagonalDescendenteNumber){
@@ -87,11 +87,11 @@ public class DiagonalDescendente implements Fila {
             }
             else{
                 if(diagonalDescendentePos.charAt(pos) == 'D'){
-                    diagonalDescendentePeca = new Rainha(tabuleiro, pos, pos,'D',"Rainha");
+                    diagonalDescendentePeca = new Rainha(tabuleiro, pos, pos);
                     return diagonalDescendentePeca;
                 }
                 else if(diagonalDescendentePos.charAt(pos) == '-'){
-                    diagonalDescendentePeca = new Nada(tabuleiro, pos, pos, '-', "Nada");
+                    diagonalDescendentePeca = new Nada(tabuleiro, pos, pos);
                     return diagonalDescendentePeca;
                 }
             }

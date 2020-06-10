@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * Class Coluna que implementa a interface Fila 
+ * Class Coluna que implementa a interface Fila.
  * Representa uma coluna do tabuleiro
  */
 public class Coluna implements Fila {
@@ -11,7 +11,7 @@ public class Coluna implements Fila {
     
     /**
      * Construtor que obtem todas as colunas do tabuleiro
-     * @param tabuleiro - Representa um tabuleiro criado apartir de um configuração
+     * @param tabuleiro - Representa um tabuleiro criado apartir de um configuracao
      * @param colunaNumber - inteiro que representa a coordenada da coluna que pretendemos obter
      */
     public Coluna(Tabuleiro tabuleiro, int colunaNumber){
@@ -62,15 +62,15 @@ public class Coluna implements Fila {
             }
             else{
                 if(colunaPos.charAt(pos) == 'D'){
-                    colunaPeca = new Rainha(tabuleiro, pos, pos,'D',"Rainha");
+                    colunaPeca = new Rainha(tabuleiro, pos, pos);
                     return colunaPeca;
                 }
                 else if(colunaPos.charAt(pos) == '-'){
-                    colunaPeca = new Nada(tabuleiro, pos, pos, '-', "Nada");
+                    colunaPeca = new Nada(tabuleiro, pos, pos);
                     return colunaPeca;
                 }
             }
-        return null;
+            return null;
     }
 
     public int getColunaNumber(){

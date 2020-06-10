@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /**
  * Class Validador
- * Representa um Validador que testa a validade das configurações
+ * Representa um Validador que testa a validade das configuracoes
  */
 public class Validador {
     private static Scanner scanner = new Scanner(System.in);
@@ -10,10 +10,14 @@ public class Validador {
     public static void main(String[] args) {
 
         if(args.length == 0){
-        System.out.println("Digite a sua String: ");
+        
+      /*   System.out.println("Digite a sua String: ");
         String userString = scanner.nextLine();
-        String userStringWithoutSpaces = userString.replaceAll("\\s+","");
-        validadorIndividual(userStringWithoutSpaces);
+        validadorIndividual(userString); */
+        Tabuleiro tab = new Tabuleiro("DD--"); 
+        Peca peca = tab.peca(0,0); 
+        System.out.println(peca.podeIrPara(1,1));
+        
         scanner.close();
         }
         else if(args[0].equals("filtro")){
@@ -24,9 +28,9 @@ public class Validador {
     }
 
     /**
-     * Função que classifica a configuração dada como válida ou inválida
+     * Funcao que classifica a configuracao dada como valida ou invalida
      * @param configuracao string que representa uma configuração do tabuleiro
-     * @return uma string que representa a validade da configuração
+     * @return uma string que representa a validade da configuracao
      */
     public static String filtro(String configuracao) {
         Tabuleiro tabuleiro = new Tabuleiro(configuracao);
@@ -42,13 +46,16 @@ public class Validador {
     }
 
     /**
-     * Função que recebe uma configuração do tabuleiro e classifica-a como "VALIDA" ou "INVALIDA"
-     * @param configuracao string que representa uma configuração do tabuleiro
+     * Funcao que recebe uma configuração do tabuleiro e classifica-a como "VALIDA" ou "INVALIDA"
+     * @param configuracao string que representa uma configuracao do tabuleiro
      */
-    public static void validadorIndividual(String configuracao){
+    public void validadorIndividual(String configuracao){
         Tabuleiro tabuleiro = new Tabuleiro(configuracao);
 
-        if(tabuleiro.isValid() == false){
+        if(!configuracao.matches("[abc]+")){
+            System.out.println("INVALIDA");
+        }
+        else if(tabuleiro.isValid() == false){
             System.out.println("INVALIDA");
         }
         else{
