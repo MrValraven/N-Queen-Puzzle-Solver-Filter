@@ -3,7 +3,7 @@
  * Representa o que e uma peca no tabuleiro
  */
 public abstract class Peca {
-    private Tabuleiro tab;
+    public Tabuleiro tab;
     private int linha;
     private int coluna;
 
@@ -22,18 +22,37 @@ public abstract class Peca {
     }
 
     /**
-     * Funcao que verifica se uma posicao está livre ou ameaçada
+     * Funcao que verifica se uma posicao está livre 
      * @param linha - inteiro que representa a coordenada da linha
      * @param coluna - inteiro que representa a coordenada da coluna
-     * @return true se a posicao esta livre de perigo, false se estiver ameaçada
+     * @return true se a posicao esta livre, false se estiver ocupada
      */
-    public abstract boolean podeIrPara(int linha, int coluna);
+    public boolean podeIrPara(int linha, int coluna){
+        int size = tab.getSize();
+        if(linha >= size || coluna >= size || tab.peca(linha,coluna) == null){
+            return false;
+        }
+        else{
+            return vazia();
+        }
+    } 
 
     /**
      * Funcao que verifica se uma posicao está ocupada
      * @return true se estiver vazia, false se estiver ocupada
      */
-    public abstract boolean vazia();
+    public boolean vazia(){
+        int linha = getLinha();
+        int coluna = getColuna();
+        char[][] board = tab.getBoard();
+        if(board[linha][coluna] == 'D'){
+            return false;
+        }
+        else{
+            return true;
+        }
+        
+    }
 
     /**
      * Funcao que verifica se e possivel atacar uma peca

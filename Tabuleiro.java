@@ -15,14 +15,18 @@ public class Tabuleiro {
      */
     public Tabuleiro(String repr) {
         this.repr = repr;
-        if(repr.length() % 2 != 0){
-            repr = "";
-        }
         finalRepr = repr.replaceAll("\\s+","");
         size = (int) (Math.sqrt(finalRepr.length()));
         board = new char[size][size];
         boardPecas = new Peca[size][size]; 
         int aux = 0;
+
+        if(finalRepr.length() % size != 0){
+            repr = "";
+        }
+        else if(finalRepr.matches("[abc]+")){
+            System.out.println("INVALIDA");
+        }
 
         //converter a String numa Matriz
         for (int i = 0; i < size; i++){ 
@@ -59,6 +63,7 @@ public class Tabuleiro {
      */
     public Peca peca(int linha, int coluna){
         return boardPecas[linha][coluna];
+        
     }
     
     /**
@@ -143,7 +148,7 @@ public class Tabuleiro {
      * Funcao que obtem o valor do tamanho de cada lado do tabuleiro
      * @return um inteiro que representa o tamanho de cada lado do tabuleiro
      */
-    private int getSize() {
+    public int getSize() {
         return (int) Math.sqrt(getLength());
     }
 
@@ -152,7 +157,7 @@ public class Tabuleiro {
      * @return um inteiro que representa o tamanho do tabuleiro
      */
 	public int getLength() {
-		return repr.length();
+		return finalRepr.length();
     }
 
     /**

@@ -11,12 +11,18 @@ public class Validador {
 
         if(args.length == 0){
         
-      /*   System.out.println("Digite a sua String: ");
+       /*System.out.println("Digite a sua String: ");
         String userString = scanner.nextLine();
         validadorIndividual(userString); */
-        Tabuleiro tab = new Tabuleiro("DD--"); 
-        Peca peca = tab.peca(0,0); 
-        System.out.println(peca.podeIrPara(1,1));
+        
+        Tabuleiro tab1 = new Tabuleiro("D-D-D----");
+        Peca peca = tab1.peca(0,1); 
+        System.out.println(peca.vazia());
+        Tabuleiro tab = new Tabuleiro("D-D-D----");
+        Peca peca_0 = tab.peca(0,0); 
+        Peca peca_1 = tab.peca(1,4);
+        System.out.println(peca_0.ataca(peca_1));
+        
         
         scanner.close();
         }
@@ -52,10 +58,7 @@ public class Validador {
     public void validadorIndividual(String configuracao){
         Tabuleiro tabuleiro = new Tabuleiro(configuracao);
 
-        if(!configuracao.matches("[abc]+")){
-            System.out.println("INVALIDA");
-        }
-        else if(tabuleiro.isValid() == false){
+        if(tabuleiro.isValid() == false){
             System.out.println("INVALIDA");
         }
         else{
