@@ -1,5 +1,5 @@
 /**
- * Class Nada que herda a Class Peca
+ * <p> Class Nada que herda a Class Peca. <p>
  * Representa que tipo de peça e o vazio
  */
 public class Nada extends Peca{

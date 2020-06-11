@@ -1,5 +1,5 @@
 /**
- * Class Tabuleiro
+ * <p> Class Tabuleiro <p>
  * Representa um tabuleiro
  */ 
 public class Tabuleiro {
@@ -22,28 +22,32 @@ public class Tabuleiro {
         int aux = 0;
 
         if(finalRepr.length() % size != 0){
-            repr = "";
+            finalRepr = "";
         }
-        else if(finalRepr.matches("[abc]+")){
+        else if(!finalRepr.matches("[D-]+")){
             System.out.println("INVALIDA");
         }
-
-        //converter a String numa Matriz
-        for (int i = 0; i < size; i++){ 
-            for (int j = 0; j < size; j++){ 
-                if(aux < finalRepr.length())
-                    board[i][j] = finalRepr.charAt(aux);
+        else{
+            //converter a String numa Matriz
+            for (int i = 0; i < size; i++){ 
+                for (int j = 0; j < size; j++){ 
+                    if(aux < finalRepr.length()){
+                        board[i][j] = finalRepr.charAt(aux);
                     
-                    //guardar os objetos 'rainha' e 'nada' na matriz
-                    if (finalRepr.charAt(aux) == 'D') {
-                        boardPecas[i][j] = new Rainha(this, i, j);
-                    }
-                    else {
-                        boardPecas[i][j] = new Nada(this, i, j);
+                        //guardar os objetos 'rainha' e 'nada' na matriz
+                        if (finalRepr.charAt(aux) == 'D') {
+                            boardPecas[i][j] = new Rainha(this, i, j);
+                        }
+                        else {
+                            boardPecas[i][j] = new Nada(this, i, j);
+                        }
                     } 
                 aux++; 
-            } 
+                } 
+            }
         }
+
+        
     }
     
     /**
@@ -62,8 +66,16 @@ public class Tabuleiro {
      * @return a peca nas coordenadas indicadas
      */
     public Peca peca(int linha, int coluna){
-        return boardPecas[linha][coluna];
+        try {
+            
+            return boardPecas[linha][coluna];
         
+        } catch (Exception e) {
+        }
+
+        Peca peca = new Rainha(this, linha, coluna);
+        
+        return peca;
     }
     
     /**
@@ -176,5 +188,4 @@ public class Tabuleiro {
     public String toString(){
         return finalRepr;
     }
-
 }

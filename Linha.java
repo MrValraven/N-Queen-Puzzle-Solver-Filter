@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * Class Linha que implementa a interface Fila.
+ * <p> Class Linha que implementa a interface Fila. <p>
  * Representa uma linha do tabuleiro
  */
 public class Linha implements Fila {

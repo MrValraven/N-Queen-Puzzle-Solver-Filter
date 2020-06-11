@@ -1,5 +1,6 @@
 /**
- * Interface Fila que representa o que e uma fila do tabuleiro e os seus atributos comuns
+ * <p> Interface Fila <p> 
+ * Representa o que e uma fila do tabuleiro e os seus atributos comuns
  * 
  */
 public interface Fila {

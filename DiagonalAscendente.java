@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * Class DiagonalAscendente que implementa a interface Fila.
+ * <p> Class DiagonalAscendente que implementa a interface Fila. <p>
  * Representa uma diagonal ascendente do tabuleiro
  */
 public class DiagonalAscendente implements Fila {

@@ -3,8 +3,8 @@ import java.util.List;
 import java.util.Scanner;
 
 /** 
- * Class Gerador
- * <br> Representa um Gerador de configuracoes com diversos argumentos <br>
+ * <p> Class Gerador <p>
+ * Representa um Gerador de configuracoes com diversos argumentos
  */ 
 public class Gerador {
     

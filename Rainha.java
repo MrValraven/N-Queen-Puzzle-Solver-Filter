@@ -1,5 +1,5 @@
 /**
- * Class Rainha que herda a Class Peca
+ * <p> Class Rainha que herda a Class Peca <p>
  * Representa que tipo de peça e uma Rainha
  */
 public class Rainha extends Peca {
