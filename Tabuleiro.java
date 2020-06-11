@@ -24,9 +24,6 @@ public class Tabuleiro {
         if(finalRepr.length() % size != 0){
             finalRepr = "";
         }
-        else if(!finalRepr.matches("[D-]+")){
-            System.out.println("INVALIDA");
-        }
         else{
             //converter a String numa Matriz
             for (int i = 0; i < size; i++){ 
@@ -145,10 +142,8 @@ public class Tabuleiro {
      */
     public boolean isValid(){
         for(int i = 0; i < getSize(); i++){
-            int linha = i;
             for(int j = 0; j < getSize(); j++){
-                int coluna = j;
-                if(ameacada(linha, coluna) == true){
+                if(ameacada(i, j) == true){
                     return false;
                 }
             }

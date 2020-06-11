@@ -13,19 +13,27 @@ public class Validador {
             System.out.println("Digite a sua String: ");
             String userString = scanner.nextLine();
             Tabuleiro tabuleiro = new Tabuleiro(userString);
+            int size = (int)Math.sqrt(userString.length());
 
-            if(tabuleiro.isValid() == false){
+            
+            if(!(userString.matches("[D-]+"))){
                 System.out.println("INVALIDA");
             }
-            else{
+            else if(userString.length() % size != 0){
+                System.out.println("INVALIDA");
+            }
+            else if(tabuleiro.isValid() == true){
                 System.out.println("VALIDA");
+            }
+            else{
+                System.out.println("INVALIDA");
             } 
         }
-        else if(args[0].equals("filtro")){
+       /*  else if(args[0].equals("filtro")){
             for(int i = 1; i < args.length; i++){
                 filtro(args[i]);
             }
-        }
+        } */
     }
 
     /**
