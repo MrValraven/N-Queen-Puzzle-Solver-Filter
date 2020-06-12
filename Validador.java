@@ -1,39 +1,48 @@
+import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * <p> Class Validador <p>
+ * <p>
+ * Class Validador
+ * <p>
  * Representa um Validador que testa a validade das configuracoes
  */
 public class Validador {
-    private static Scanner scanner = new Scanner(System.in);
-    
-    public static void main(String[] args) {
 
-        if(args.length == 0){
-            System.out.println("Digite a sua String: ");
-            String userString = scanner.nextLine();
-            Tabuleiro tabuleiro = new Tabuleiro(userString);
-            int size = (int)Math.sqrt(userString.length());
+    public static void main(String[] args) throws IOException {
+        ArrayList<String> stringValidas = new ArrayList<String>();
+        String input;
+        if (args.length == 0) {
+            Scanner scanner = new Scanner(System.in);
+            input = scanner.nextLine();
+            Tabuleiro tabuleiro = new Tabuleiro(input);
 
-            
-            if(!(userString.matches("[D-]+"))){
+            if (!(input.matches("[D-]+"))) {
                 System.out.println("INVALIDA");
-            }
-            else if(userString.length() % size != 0){
-                System.out.println("INVALIDA");
-            }
-            else if(tabuleiro.isValid() == true){
+            } else if (tabuleiro.isValid() == true) {
                 System.out.println("VALIDA");
-            }
-            else{
+            } else {
                 System.out.println("INVALIDA");
-            } 
-        }
-       /*  else if(args[0].equals("filtro")){
-            for(int i = 1; i < args.length; i++){
-                filtro(args[i]);
             }
-        } */
+            scanner.close();
+        } else if (args[0].equals("filtro")) {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+            input = null;
+            while (true) {
+                input = bufferedReader.readLine();
+            
+                if(filtro(input) == "VALIDA"){
+                    stringValidas.add(input);
+                }
+                if(input.equals("null")){
+                    for(int i = 0; i < stringValidas.size(); i++){
+                        System.out.println(stringValidas.get(i));
+                    }
+                    break;
+                }
+            }
+        }
     }
 
     /**
@@ -53,4 +62,5 @@ public class Validador {
         }
         return resultado;
     }
+
 }

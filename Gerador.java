@@ -188,7 +188,7 @@ public class Gerador {
                 finalString = binary.replace('1', 'D');
                 finalString = finalString.replace('0', '-');
                 if(modeValue == 1){
-                    //System.out.println(finalString);
+                    System.out.println(finalString);
                 }
                 allStrings.add(finalString);
             }
