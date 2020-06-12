@@ -1,5 +1,3 @@
-import java.io.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -9,9 +7,7 @@ import java.util.Scanner;
  * Representa um Validador que testa a validade das configuracoes
  */
 public class Validador {
-
-    public static void main(String[] args) throws IOException {
-        ArrayList<String> stringValidas = new ArrayList<String>();
+    public static void main(String[] args){
         String input;
         if (args.length == 0) {
             Scanner scanner = new Scanner(System.in);
@@ -26,20 +22,17 @@ public class Validador {
                 System.out.println("INVALIDA");
             }
             scanner.close();
-        } else if (args[0].equals("filtro")) {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        } 
+        else if (args[0].equals("filtro")) {
+            Scanner scanner = new Scanner(System.in);
+
             input = null;
-            while (true) {
-                input = bufferedReader.readLine();
+
+            while (scanner.hasNext()) {
+                input = scanner.nextLine();
             
                 if(filtro(input) == "VALIDA"){
-                    stringValidas.add(input);
-                }
-                if(input.equals("null")){
-                    for(int i = 0; i < stringValidas.size(); i++){
-                        System.out.println(stringValidas.get(i));
-                    }
-                    break;
+                    System.out.println(input);
                 }
             }
         }
@@ -54,11 +47,11 @@ public class Validador {
         Tabuleiro tabuleiro = new Tabuleiro(configuracao);
         String resultado;
 
-        if(tabuleiro.isValid() == false){
-            resultado = "INVALIDA";
+        if(tabuleiro.isValid() == true){
+            resultado = "VALIDA";
         }
         else{
-            resultado = "VALIDA";
+            resultado = "INVALIDA";
         }
         return resultado;
     }

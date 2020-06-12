@@ -21,7 +21,7 @@ public class Tabuleiro {
         boardPecas = new Peca[size][size]; 
         int aux = 0;
 
-        if(finalRepr.length() % size != 0){
+        if(finalRepr.length() != size * size){
             finalRepr = "";
         }
         else{
@@ -86,8 +86,9 @@ public class Tabuleiro {
         if(linha(linha).pecas() >= 2 || coluna(coluna).pecas() >= 2 || diagonalAscendente(linha, coluna).pecas() >= 2 || diagonalDescendente(linha, coluna).pecas() >= 2){
             return true;
         }
-
-        return false;
+        else{
+            return false; 
+        }
     }
 
     /**
@@ -141,14 +142,21 @@ public class Tabuleiro {
      * @return false se o tabuleiro tiver uma configuracao errada, caso contrario, true
      */
     public boolean isValid(){
-        for(int i = 0; i < getSize(); i++){
-            for(int j = 0; j < getSize(); j++){
-                if(ameacada(i, j) == true){
-                    return false;
+        int size = getSize();
+        int length = getLength();
+        if((length != size * size) || (finalRepr == "")){
+            return false;
+        }
+        else{
+            for(int i = 0; i < getSize(); i++){
+                for(int j = 0; j < getSize(); j++){
+                    if(ameacada(i, j) == true){
+                        return false;
+                    }
                 }
             }
+            return true;
         }
-        return true;
     }
 
     /**
